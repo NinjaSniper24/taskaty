@@ -1,0 +1,2 @@
+Next step : Applications with Python, Rg ; Web scrapping ; exel ; json databases ..., 2023-09-01, 2023-09-20, False
+Complete python web dev course, None, 2023-09-01, None, False
