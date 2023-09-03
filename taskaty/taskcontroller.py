@@ -37,8 +37,8 @@ class TaskController :
                 done = False if done.strip('\n') == "False" else True
                 all_tasks.append({'title' : title , 'description' : description , 'start_date' : start_date, 'end_date' : end_date , 'done' : done })
             return all_tasks
-    def due_date(self,start ,end) :
-        start_date = date.fromisoformat(start)
+    def due_date(self,end) :
+        start_date = date.today()
         end_date = date.fromisoformat(end)
         time_delta = end_date - start_date
         if time_delta.days > 0 :
@@ -51,7 +51,7 @@ class TaskController :
         formatted_tasks = []
         for number , task in enumerate(tasks , 1):
                 if task['start_date'] and task['end_date']:
-                    due_date = self.due_date(task['start_date'],task['end_date'])
+                    due_date = self.due_date(task['end_date'])
                 else:
                     due_date = 'Open'
                 formatted_tasks.append({'no.': number, **task, 'due_date' : due_date})
